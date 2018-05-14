@@ -1,0 +1,81 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    background-color: #FFF;
+    background-image: url('../images/image-news/bg.png');
+}
+
+.body-max {
+    width: 1920px;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.content-max {
+    width: 1524px;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.head {
+    height: 1080px;
+    background-image: url('../images/image-news/bg-banner.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.menu {
+    height: 135px;
+    position: relative;
+}
+
+    .menu img {
+        position: absolute;
+        left: 0px;
+        top: 20px;
+    }
+
+    .menu .list-menu {
+        position: absolute;
+        height: 100%;
+        right: 0px;
+        width: auto;
+    }
+
+        .menu .list-menu a .item-menu {
+            float: left;
+            font-size: 19.49px;
+            font-weight: bold;
+            color: #000000;
+            line-height: 210px;
+            height: 135px;
+            margin: 0px 10px;
+            padding: 0px 20px;
+            position: relative;
+        }
+
+            .menu .list-menu a .item-menu.active {
+                background-color: rgba(0,0,0,0.2);
+                color: #FFF;
+            }
+
+.tuvantructuyen {
+    background-image: url('../images/image-news/bg-tuvantructuyen.png');
+    background-position: center center;
+    background-repeat: repeat;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 143px;
+}
+
+    .tuvantructuyen img {
+        position: absolute;
+        left: 0px;
+        bottom: -110px;
+        height: 210px;
+    }

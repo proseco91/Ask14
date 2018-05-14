@@ -19,38 +19,10 @@ public partial class MasterPage_HeaderFooter : System.Web.UI.MasterPage
     {
         if (!IsPostBack)
         {
-            
-            loadFooter();
         }
     }
     public DataTable GetCate()
     {
         return objCate.GetAllData_WITH_PARENTID_VIEWER();
     }
-    
-    //public System.Data.DataTable dbGetSlideShow()
-    //{
-    //    return objSlide.GetAllWithStatus();
-    //}
-    void loadFooter()
-    {
-        try
-        {
-            DataTable dbFooter = objFooter.GetData();
-            ltFooter.Text = dbFooter.Rows[0]["Content"].ToString();
-        }
-        catch
-        {
-            ltFooter.Text = "";
-        }
-
-    }
-    //public DataTable loadHotNews()
-    //{
-    //    return objNews.NewsTop1HotNews();
-    //}
-    //public DataTable GetSlideShow()
-    //{
-    //    return objSlide.GetAllWithStatus();
-    //}
 }
