@@ -1,0 +1,135 @@
+﻿*
+{
+    font-family: Arial;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+body
+{
+}
+
+.hoidap-wrapper
+{
+    width: 550px !important;    
+    float: left;
+    background-color: White;    
+    border: 13px solid #857f7f;
+}
+
+.hoidap-primary
+{
+    margin: 10px;
+}
+
+.hoidap-close
+{
+    width: 100%;
+    float: left;
+}
+
+.hoidap-title
+{
+    color: #a072a1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hoidap-item
+{
+    margin-top: 5px;
+}
+
+.hoidap-item-title
+{
+    width: 140px;
+    float: left;
+    color: #D84FAF;
+    font-weight: bold;
+}
+
+.ckeditor
+{
+    height: 100px;
+    float: left;
+}
+
+.buttonhoidap
+{
+    float: right;
+    margin: 5px;
+    padding-right: 32px;
+    padding-top: 0px;
+}
+
+.hoidap-item-last
+{
+    margin-top: 23px;
+}
+
+.hoidap-close a
+{
+    background: url(../images/close.png) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: right;
+    height: 25px;
+    right: 8px;
+    width: 26px;
+    margin: 10px;
+}
+
+.hoidap-close a:hover
+{
+    background: url(../images/close-s.png) no-repeat scroll 0 0 transparent;
+}
+
+
+.BoderContentWide
+{
+    border: 1px solid #CCCCCC;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    border-radius: 7px;
+    float: left;
+    width: 580px;
+}
+
+.BoderContentWide legend
+{
+    margin-left: 12px;
+    color: #3CB3B3;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.help-wrapper
+{
+    margin: 20px 15px;
+}
+
+.help-item-title
+{
+    color: #D84FAF;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.help-item-content
+{
+    color: #666666;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.ask
+{
+    float: right;
+    margin: 20px;
+}
+
+.help-right
+{
+    margin-top: 9px;
+}

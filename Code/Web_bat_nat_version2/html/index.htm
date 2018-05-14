@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ask14.vn</title>
+    <meta name="description" content="">
+    <!-- Mobile-friendly viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style sheet link -->
+
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Styles/SlideShow.css" rel="stylesheet" />
+    <script src="../Scripts/slideShow.js"></script>
+    <link href="../Styles/styleSheet.css" rel="stylesheet" media="all">
+
+    <!--<script src="../Scripts/responsiveslides.min.js"></script>-->
+
+
+    <script type="text/javascript">
+        var timeClearSlider = setTimeout(function () { }, 1000);
+        clearTimeout(timeClearSlider);
+        $(document).ready(function () {
+            actionSilder(0);
+            $('.btnSlider').click(function () {
+                var index = $('.btnSlider').index($(this));
+                actionSilder(index);
+            });
+        });
+        function actionSilder(index) {
+            if (index >= $('.rslides .itemSilder').size())
+                index = 0;
+            $('.rslides .itemSilder').parent().parent().removeClass('itemSilderSelect');
+            $('.rslides .itemSilder').parent().parent().eq(index).addClass('itemSilderSelect');
+            $('.listSliderBtn .btnSlider').removeClass('btnSliderSelect');
+            $('.listSliderBtn .btnSlider').eq(index).addClass('btnSliderSelect');
+            clearTimeout(timeClearSlider);
+            timeClearSlider = setTimeout(function () {
+                actionSilder($('.rslides .itemSilder').parent().parent().index($('.rslides').find('.itemSilderSelect')) + 1);
+            }, 5000);
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var _itemSlide = $('.slide-item').size();
+            $('#slides_container_testimonial').css('width', _itemSlide * 800 + 100 + 'px');
+        });
+
+        $(function () {
+            //$(".rslides").responsiveSlides();
+
+
+        });
+    </script>
+</head>
+<body>
+    <header role="banner">
+        <div class="inner">
+            <div id="logo">
+                <h1>
+                    <a href="#">
+                        <img src="../images/logo.png" alt="logo" />
+                    </a>
+                </h1>
+            </div>
+            <div id="headerRight">
+                <div id="search">
+                    <input type="text" onfocus="if(this.value=='Tìm kiếm...')this.value='';" onblur="if(this.value=='')this.value='Tìm kiếm...';" value="Tìm kiếm..." name="keySearch" style="width: 405px; height: 30px;" />
+                    <div class="bgSearch">
+                    </div>
+                </div>
+                <div id="formLogin">
+                    <div class="itemFormLogin">
+                        <a href="#">Đăng ký</a>
+                    </div>
+                    <div class="itemFormLogin">
+                        <a href="#">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav id="menuNav">
+        <div class="inner">
+            <ul class="menuBar">
+                <li class=" logoIcon">
+                    <h2>
+                        <a href="#">
+                            <img src="../images/iconHome.png" alt="icon Home" />
+                        </a>
+                    </h2>
+                </li>
+                <li class="menuBar menuActive">
+                    <h2>
+                        <a href="#">Diễn đàn</a>
+                    </h2>
+                </li>
+                <li class="menuBar">
+                    <h2>
+                        <a href="#">Tin tức & sự kiện</a>
+                    </h2>
+                </li>
+                <li class="menuBar">
+                    <h2>
+                        <a href="#">Kiến thức</a>
+                    </h2>
+                </li>
+                <li class="menuBar">
+                    <h2>
+                        <a href="#">Hỏi đáp</a>
+                    </h2>
+                </li>
+                <li class="menuBar">
+                    <h2>
+                        <a href="#">Giới thiệu</a>
+                    </h2>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="header-responsive">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+        <div class="responsive-links nav-collapse in collapse" id="header-responsive-inner">
+            <ul class="" id="menu-primary-menu-1">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-850"><a href="#/" title="Trang chủ">Trang chủ</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-981"><a href="#">Diễn đàn</a>
+                    <!--<ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="#"><span>&nbsp; &nbsp; &nbsp; &nbsp; - Tiếng Anh Giao Tiếp</span></a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="#"><span>&nbsp; &nbsp; &nbsp; &nbsp; - Phát âm chuẩn</span></a></li>
+                    </ul>-->
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-852"><a href="#">Tin tức & sự kiện</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-853"><a href="#">Kiến thức</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-854"><a href="#">Hỏi đáp</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-855"><a href="#">Giới thiệu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="panelSilder">
+            <div class="panelHomeFixed" style="position: relative; width: 100%; border: 0 none; margin: 0 auto; max-width: 100%;">
+
+                <!-- Slideshow 2 -->
+                <ul class="rslides" id="slider2">
+                    <li><a href="#">
+                        <img class="itemSilder" alt="banner design"
+                            src="../images/SlideShow/hoctro3.jpg">
+                        <!--<img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro3.jpg') no-repeat center; background-size: cover;"
+                            src="../images/transparent.png">-->
+                    </a>
+
+                    </li>
+                    <li><a href="#">
+                        <img class="itemSilder" alt="banner design"
+                            src="../images/SlideShow/hoctro5.jpg">
+                        <!--  <img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro5.jpg') no-repeat center; background-size: cover;"
+                            src="../images/transparent.png">-->
+                    </a></li>
+                    <li><a href="#">
+                        <img class="itemSilder" alt="banner design"
+                            src="../images/SlideShow/hoctro6.jpg">
+                        <!--<img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro6.jpg') no-repeat center; background-size: cover;"
+                            src="../images/transparent.png">-->
+                    </a></li>
+                </ul>
+
+                <!--                <div class="listSlider">
+                    <a href="#">
+                        <div class="itemImage">
+                            <img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro3.jpg') no-repeat center; background-size: cover;"
+                                src="../images/transparent.png">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="itemImage">
+                            <img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro5.jpg') no-repeat center; background-size: cover;"
+                                src="../images/transparent.png">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="itemImage">
+                            <img class="itemSilder" alt="banner design" style="background: url('../images/SlideShow/hoctro6.jpg') no-repeat center; background-size: cover;"
+                                src="../images/transparent.png">
+                        </div>
+                    </a>
+                </div>-->
+                <div class="listSliderBtn">
+                    <span class="btnSlider">1</span><span class="btnSlider">2</span><span class="btnSlider">3</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both"></div>
+
+    <section id="subject" class="sectionElement">
+        <div id="bgSubjectParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgsubject bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Chủ đề
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="item-content-module">
+                        <figure>
+                            <img src="../images/subject/51_imag4512.jpg" alt="ảnh" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Bạo lực trên cơ sở Giới tại trường học</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-module">
+                        <figure>
+                            <img src="../images/subject/51_imag4512.jpg" alt="ảnh" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Bạo lực trên cơ sở Giới tại trường học</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-module">
+                        <figure>
+                            <img src="../images/subject/51_imag4512.jpg" alt="ảnh" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Bạo lực trên cơ sở Giới tại trường học</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-module">
+                        <figure>
+                            <img src="../images/subject/51_imag4512.jpg" alt="ảnh" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Bạo lực trên cơ sở Giới tại trường học</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-module">
+                        <figure>
+                            <img src="../images/subject/51_imag4512.jpg" alt="ảnh" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Bạo lực trên cơ sở Giới tại trường học</a>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="new_share" class="sectionElement">
+        <div id="bgnew_shareParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgNewShare bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Chia sẻ mới nhất
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="item-contentNewShare">
+                        <div class="item-contentNewShare-layer1">
+                            <div class="item-contentNewShare-image">
+                                <img src="../images/icon12.png" alt="icon" />
+                            </div>
+                            <div class="item-contentNewShare-info">
+                                <span class="item-contentNewShare-info-name">Chu Linh</span>
+                                <span class="item-contentNewShare-info-age">18 tuổi</span>
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer2">
+                            <span class="item-contentNewShare-layer2-icon"></span>
+                            <div class="item-contentNewShare-layer2-des">
+                                chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer3 bgNewShare1">
+                            <a href="#">Comment</a>
+                        </div>
+                    </div>
+
+                    <div class="item-contentNewShare item-contentNewShareRight">
+                        <div class="item-contentNewShare-layer1">
+                            <div class="item-contentNewShare-image">
+                                <img src="../images/icon12.png" alt="icon" />
+                            </div>
+                            <div class="item-contentNewShare-info">
+                                <span class="item-contentNewShare-info-name">Chu Linh</span>
+                                <span class="item-contentNewShare-info-age">18 tuổi</span>
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer2">
+                            <span class="item-contentNewShare-layer2-icon"></span>
+                            <div class="item-contentNewShare-layer2-des">
+                                chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer3 bgNewShare2">
+                            <a href="#">Comment</a>
+                        </div>
+                    </div>
+
+                    <div class="item-contentNewShare">
+                        <div class="item-contentNewShare-layer1">
+                            <div class="item-contentNewShare-image">
+                                <img src="../images/icon12.png" alt="icon" />
+                            </div>
+                            <div class="item-contentNewShare-info">
+                                <span class="item-contentNewShare-info-name">Chu Linh</span>
+                                <span class="item-contentNewShare-info-age">18 tuổi</span>
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer2">
+                            <span class="item-contentNewShare-layer2-icon"></span>
+                            <div class="item-contentNewShare-layer2-des">
+                                chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer3 bgNewShare3">
+                            <a href="#">Comment</a>
+                        </div>
+                    </div>
+
+                    <div class="item-contentNewShare item-contentNewShareRight">
+                        <div class="item-contentNewShare-layer1">
+                            <div class="item-contentNewShare-image">
+                                <img src="../images/icon12.png" alt="icon" />
+                            </div>
+                            <div class="item-contentNewShare-info">
+                                <span class="item-contentNewShare-info-name">Chu Linh</span>
+                                <span class="item-contentNewShare-info-age">18 tuổi</span>
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer2">
+                            <span class="item-contentNewShare-layer2-icon"></span>
+                            <div class="item-contentNewShare-layer2-des">
+                                chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện chia sẻ câu chuyện
+                            </div>
+                        </div>
+                        <div class="item-contentNewShare-layer3 bgNewShare4">
+                            <a href="#">Comment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="forum" class="sectionElement">
+        <div id="bgForumParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgForum bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Diễn đàn trường học (20)
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="Ams (4)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Ams (4)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="CVA (7)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">CVA (7)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="Ams (4)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Ams (4)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="CVA (7)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">CVA (7)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="Ams (4)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Ams (4)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="CVA (7)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">CVA (7)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="Ams (4)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">Ams (4)</a>
+                        </figcaption>
+                    </div>
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="CVA (7)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">CVA (7)</a>
+                        </figcaption>
+                    </div>
+
+                    <div class="item-content-forum">
+                        <figure>
+                            <img src="../images/forum-school1.png" alt="CVA (7)" />
+                        </figure>
+                        <figcaption>
+                            <a href="#">CVA (7)</a>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="accountOnline" class="sectionElement">
+        <div id="bgAccOnlineParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgAccOnline bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Tài khoản đang online
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="item-content-AccOnline">
+                        <figure>
+                            <span class="bgSchoolO" style="background-image: url('../images/forum-school1.png');"></span>
+                            <a href="#">
+                                <img src="../images/accOnline.jpg" alt="Tên thành viên" />
+                            </a>
+                        </figure>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventHot" class="sectionElement">
+        <div id="bgEventHotParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgEventHot bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Sự kiện hot
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="item-content-eventHot">
+                        <figure>
+                            <img src="../images/eventHot1.jpg" alt="Tên sự kiện" />
+                        </figure>
+                        <figcaption class="titleEventHot">
+                            <a href="#">Sự kiện hot</a>
+                        </figcaption>
+                    </div>
+
+                    <div class="item-content-eventHot">
+                        <figure>
+                            <img src="../images/eventHot1.jpg" alt="Tên sự kiện" />
+                        </figure>
+                        <figcaption class="titleEventHot">
+                            <a href="#">Sự kiện hot</a>
+                        </figcaption>
+                    </div>
+
+                    <div class="item-content-eventHot">
+                        <figure>
+                            <img src="../images/eventHot1.jpg" alt="Tên sự kiện" />
+                        </figure>
+                        <figcaption class="titleEventHot">
+                            <a href="#">Sự kiện hot</a>
+                        </figcaption>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-expert" class="sectionElement">
+        <div id="bgSExpertParent" class="bgSectionParent"></div>
+        <div class="bgModule">
+            <div class="inner" style="height: 100%;">
+                <div class="bgSExpert bgA">
+                </div>
+                <div class="ModuleTitle">
+                    <h2>Giới thiệu chuyên gia
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="subjectContent">
+                <div class="contentModule">
+                    <div class="SlideTestimonial">
+                        <div id="slidwWith">
+                            <div id="slides_container_testimonial">
+                                <div class="slide-item">
+
+                                    <img style="cursor: pointer;" src="../images/testimonial/24giaodien.jpg" alt="tên chuyên gia" />
+                                    <div class="slide-item-sum slide-item-expertName">
+                                        Chuyên gia: Trịnh Trung Hòa
+                                    </div>
+                                    <div class="slide-item-sum">
+                                        Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyênhiệu chuyên gia Giới thiệu chuyên gia uyên gia Gihuyên gia
+                                    </div>
+                                </div>
+                                <div class="slide-item">
+
+                                    <img style="cursor: pointer;" src="../images/testimonial/24giaodien.jpg" alt="tên chuyên gia" />
+                                    <div class="slide-item-sum slide-item-expertName">
+                                        Chuyên gia: Trịnh Trung Hòa
+                                    </div>
+                                    <div class="slide-item-sum">
+                                        Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyênhiệu chuyên gia Giới thiệu chuyên gia uyên gia Gihuyên gia
+                                    </div>
+                                </div>
+                                <div class="slide-item">
+
+                                    <img style="cursor: pointer;" src="../images/testimonial/24giaodien.jpg" alt="tên chuyên gia" />
+                                    <div class="slide-item-sum slide-item-expertName">
+                                        Chuyên gia: Trịnh Trung Hòa
+                                    </div>
+                                    <div class="slide-item-sum">
+                                        Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyên gia Giới thiệu chuyênhiệu chuyên gia Giới thiệu chuyên gia uyên gia Gihuyên gia
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style="clear: both">
+                        </div>
+                        <div id="btnSlide_testimonial">
+                            <div style="text-align: center; margin-top: 8px;">
+                                <span class="btnClickSlide_testimonial"></span>
+                                <span class="btnClickSlide_testimonial"></span>
+                                <span class="btnClickSlide_testimonial"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="partner" class="sectionElement">
+        <div class="inner">
+            <div class="itemPartner">
+                <a href="#">
+                    <img src="../images/logoPlan.png" alt="Plan" />
+                </a>
+            </div>
+            <div class="itemPartner">
+                <a href="#">
+                    <img src="../images/logoSGDHN.png" alt="Sở giáo dục Hà Nội" />
+                </a>
+            </div>
+            <div class="itemPartner">
+                <a href="#">
+                    <img src="../images/logoCSAGA.png" alt="Csaga" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="s-bottom">
+        <div id="svb1">
+        </div>
+        <div id="svb2">
+        </div>
+    </section>
+    <footer>
+        <div id="social">
+            <div class="item-social">
+                <a href="#">
+                    <img src="../images/icon-facebook.png" alt="Facebook" />
+                </a>
+            </div>
+            <div class="item-social">
+                <a href="#">
+                    <img src="../images/icon-youtube.png" alt="Youtube" />
+                </a>
+            </div>
+            <div class="item-social">
+                <a href="#">
+                    <img src="../images/icon-skype.png" alt="Skype" />
+                </a>
+            </div>
+            <div class="item-social">
+                <a href="#">
+                    <img src="../images/icon-google.png" alt="google" />
+                </a>
+            </div>
+            <div class="item-social">
+                <a href="#">
+                    <img src="../images/iconTwitter.png" alt="twitter" />
+                </a>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="inner">
+            <div class="contentFooter">
+                Địa chỉ: A9 Cốm Vòng, phường Dịch Vọng Hậu, Cầu Giấy, Hà Nội | Điện thoại: (04) 3775 932 | Hotline: 0904 732 236
+            </div>
+        </div>
+    </footer>
+</body>

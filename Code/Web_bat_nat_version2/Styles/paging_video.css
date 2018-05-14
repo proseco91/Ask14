@@ -1,0 +1,93 @@
+﻿
+/*CSS ve phan trang giao dien */
+
+li
+{
+    list-style:none;
+}
+
+.pagingcontent
+{
+    margin:0px;
+    padding:0px;
+}
+
+.pagingcontent li
+{
+    /*padding: 2px 5px;*/
+	color:#FFFFFF;
+	cursor: pointer;
+	float: left;
+	margin-right: 3px;
+	text-align: center;
+	font: bold 10pt arial;
+	/*border: 1px solid #CCCCCC;*/
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1) inset;
+    display: block;
+    position: relative;
+    border-radius:3px;
+    line-height:32px;
+    background:url('../images/demo/pagging.png')no-repeat;
+    height:32px;
+    width:32px;
+}
+
+.pagingcontent li:hover
+{
+    /*background-color: #E2EDF1;
+    border: 1px solid #8CB7C7;*/
+    color: #392D1C;
+}
+
+.pagingcontent .pagingactive
+{
+	/*background-color: #E2EDF1;*/
+/*    border: 1px solid #8CB7C7;*/
+    color: #FFFFFF;
+    background:url('../images/demo/paggingActive.png')no-repeat;
+    height:32px;
+    width:32px;
+}
+
+
+.pagingcontent .first-selected, .pagingcontent .first-selected:hover
+{
+    background: none;
+    border: 1px solid #E5E5E5;
+    color: #D9D9D9;
+    cursor: default;
+    text-shadow: none !important;
+}
+
+.pagingcontent .last-selected, .pagingcontent .last-selected:hover
+{
+    background: none;
+    border: 1px solid #E5E5E5;
+    color: #D9D9D9;
+    cursor: default;
+    text-shadow: none !important;
+}
+
+.pagingcontent .paging-img
+{
+    border:none;
+    padding:0px;
+    margin-top: 1px;
+    margin-right:3px;
+}
+
+.pagingcontent .paging-img:hover
+{
+    background:none;
+    border:none;
+}
+
+.pagingcontent .pagingprev
+{
+    margin-right:14px;
+}
+
+.pagingcontent .pagingnext
+{
+    margin-left:14px;
+}

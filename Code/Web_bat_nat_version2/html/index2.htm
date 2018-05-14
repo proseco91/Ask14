@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/SlideShow.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/slideShow.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var timeClearSlider = setTimeout(function () { }, 1000);
+        clearTimeout(timeClearSlider);
+        $(document).ready(function () {
+            actionSilder(0);
+            $('.btnSlider').click(function () {
+                var index = $('.btnSlider').index($(this));
+                actionSilder(index);
+            });
+        });
+        function actionSilder(index) {
+            if (index >= $('.listSlider .itemSilder').size())
+                index = 0;
+            $('.listSlider .itemSilder').removeClass('itemSilderSelect');
+            $('.listSlider .itemSilder').eq(index).addClass('itemSilderSelect');
+            $('.listSliderBtn .btnSlider').removeClass('btnSliderSelect');
+            $('.listSliderBtn .btnSlider').eq(index).addClass('btnSliderSelect');
+            clearTimeout(timeClearSlider);
+            timeClearSlider = setTimeout(function () {
+                actionSilder($('.listSlider .itemSilder').index($('.listSlider').find('.itemSilderSelect')) + 1);
+            }, 5000);
+        }
+    </script>
+    <script type="text/javascript">
+        function activeitem(id) {
+            $('#item' + id).children('h2').addClass("itemMenuActive");
+        }
+        function activeitemChild(id) {
+            $('#itemMenuChild' + id).addClass("itemMenuChildActive");
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="divCenter">
+                <div id="header-child">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="../images/icons/logo.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div id="hotline">
+                        Hotline:<span> 0935986869</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            <div class="divCenter">
+                <div id="MenuNav">
+                    <div class="itemMenu itemMenuFirst">
+                        <a href="#">
+                            <h2>
+                                Trang chủ
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu">
+                        <a href="#">
+                            <h2>
+                                Đặt vé
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu">
+                        <a href="#">
+                            <h2>
+                                Đặt phòng khách sạn
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu">
+                        <a href="#">
+                            <h2>
+                                Đặt Tour
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu">
+                        <a href="#">
+                            <h2>
+                                Thuê xe
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu">
+                        <a href="#">
+                            <h2>
+                                Tin tức
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="itemMenu itemMenuLast">
+                        <a href="#">
+                            <h2>
+                                Liên hệ
+                            </h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="panelSilder">
+                <div class="panelHomeFixed" style="position: relative; width: 100%; border: 0 none;
+                    margin: 0 auto; max-width: 100%;">
+                    <div class="listSlider">
+                        <a href="#">
+                            <div class="itemImage">
+                                <img class="itemSilder" alt="Khám phá tại đây" style="background: url('../images/du-lich-nha-trang.jpg') no-repeat center;
+                                    background-size: cover;" src="../images/transparent.png">
+                            </div>
+                        </a><a href="#">
+                            <div class="itemImage">
+                                <img class="itemSilder" alt="Khám phá tại đây" style="background: url('../images/Bãi_biển_Sầm_Sơn.jpg') no-repeat center;
+                                    background-size: cover;" src="../images/transparent.png">
+                            </div>
+                        </a><a href="#">
+                            <div class="itemImage">
+                                <img class="itemSilder" alt="Khám phá tại đây" style="background: url('../images/cualodua.jpg') no-repeat center;
+                                    background-size: cover;" src="../images/transparent.png">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="listSliderBtn">
+                        <span class="btnSlider"></span><span class="btnSlider"></span><span class="btnSlider">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="divCenter">
+                <div id="diemhapdan">
+                    <div class="layerLeft">
+                        <div class="bgTab">
+                            <span>Địa điểm hấp dẫn</span>
+                        </div>
+                        <div class="content-layer">
+                            <div class="item-content">
+                                <div class="itemLeft">
+                                    <img src="../images/bgImage.jpg" alt="ảnh" />
+                                </div>
+                                <div class="itemRight">
+                                    <p class="title">
+                                        <a href="#">Quần đảo Cô Tô</a></p>
+                                    <p class="description">
+                                        Quần đảo Cô Tô trù phú với nghề đánh bắt cá lâu đời. Sự khác biệt giữa Cô Tô và
+                                        các đảo khác ở Việt Nam chính là ở sự đa dạng trong kinh tế....
+                                    </p>
+                                    <p class="viewMore">
+                                        <a href="#">Xem thêm</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="itemLeft">
+                                    <img src="../images/bgImage.jpg" alt="ảnh" />
+                                </div>
+                                <div class="itemRight">
+                                    <p class="title">
+                                        <a href="#">Quần đảo Cô Tô</a></p>
+                                    <p class="description">
+                                        Quần đảo Cô Tô trù phú với nghề đánh bắt cá lâu đời. Sự khác biệt giữa Cô Tô và
+                                        các đảo khác ở Việt Nam chính là ở sự đa dạng trong kinh tế....
+                                    </p>
+                                    <p class="viewMore">
+                                        <a href="#">Xem thêm</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="itemLeft">
+                                    <img src="../images/bgImage.jpg" alt="ảnh" />
+                                </div>
+                                <div class="itemRight">
+                                    <p class="title">
+                                        <a href="#">Quần đảo Cô Tô</a></p>
+                                    <p class="description">
+                                        Quần đảo Cô Tô trù phú với nghề đánh bắt cá lâu đời. Sự khác biệt giữa Cô Tô và
+                                        các đảo khác ở Việt Nam chính là ở sự đa dạng trong kinh tế....
+                                    </p>
+                                    <p class="viewMore">
+                                        <a href="#">Xem thêm</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layerRight">
+                        <div id="HotNews">
+                            <div class="imgHotNews">
+                                <img src="../images/imgNoibat.jpg" alt="Ảnh tin nổi bật" />
+                                <div class="titleHotNews">
+                                    <a href="#">TIN TỨC NỔI BẬT</a>
+                                </div>
+                            </div>
+                            <div class="head">
+                                <p>
+                                    <strong>Gọi ngay:</strong> <span>0935986869</span>
+                                </p>
+                                <p>
+                                    Để đặt chỗ và nhận các thông tin cần thiết
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

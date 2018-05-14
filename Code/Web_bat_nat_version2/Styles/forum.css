@@ -1,0 +1,192 @@
+﻿#cmtn {
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+#comment {
+    margin: 0px 0px;
+}
+
+.boxNhaptext {
+    border: 1px solid #b4bbcd;
+    position: relative;
+    z-index: 100;
+}
+
+.boxNhaptextTextEff {
+    background-image: url("../images/TnVvzyC1z5j.png");
+    background-position: -208px -282px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    height: 6px;
+    left: 5px;
+    position: absolute;
+    top: -6px;
+    transition: left 0.3s ease-out 0s;
+    width: 10px;
+}
+
+.boxNhaptextText {
+    margin: 5px 5px 0;
+    position: relative;
+}
+
+    .boxNhaptextText textarea {
+        border: medium none;
+        color: #777777;
+        font-size: 13px;
+        line-height: 1.28;
+        min-height: 48px;
+        overflow: hidden;
+        resize: none;
+        transition: height 0.2s ease 0s;
+        vertical-align: top;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+.loadingComment {
+    background: rgba(0, 0, 0, 0) url("images/loading.gif") no-repeat scroll 0 0;
+    bottom: -29px;
+    display: none;
+    height: 32px;
+    position: absolute;
+    right: 52px;
+    text-align: center;
+    width: 32px;
+    z-index: 10;
+}
+
+.btnNutAll {
+    background-color: #f2f2f2;
+    border-top: 1px solid #e6e6e6;
+    height: 30px;
+    margin-top: -10px;
+    position: relative;
+    z-index: 1;
+}
+
+.btnDangLen {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #cccccc;
+    color: #333333;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 25px;
+}
+
+    .btnDangLen:hover {
+        background: #cccccc none repeat scroll 0 0;
+        color: #fff;
+    }
+
+.newsDetails-content {
+    line-height: 18px;
+    word-spacing: 2px;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.titleSubject {
+    margin-top: 20px;
+}
+
+#tmpCmt {
+    float: left;
+    margin-top: 10px;
+}
+
+.item-comment {
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+}
+
+    .item-comment .item-comment-avarta {
+        float: left;
+        margin-right: 10px;
+        width: 50px;
+    }
+
+        .item-comment .item-comment-avarta img {
+            border: medium none;
+        }
+
+    .item-comment .item-comment-avarta-content {
+        float: left;
+        width: calc(100% - 60px);
+    }
+
+.time-post-comment {
+    float: left;
+    line-height: 18px;
+    width: 100%;
+    word-spacing: 2px;
+}
+
+    .time-post-comment span {
+        color: #898f9c;
+        font-size: 10px;
+    }
+
+.item-comment .item-comment-avarta-content a {
+    color: #3b5988;
+    font-weight: bold;
+}
+
+.item-post-content {
+    line-height: 18px;
+    word-spacing: 2px;
+    text-align: justify;
+}
+
+.quick-icon {
+    float: right;
+    margin: 10px 0px;
+}
+
+    .quick-icon a {
+        cursor: pointer;
+    }
+
+.like-button, .like-buttonComment {
+    background-image: url('../images/like-icon.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 20px;
+    display: block;
+    float: left;
+    padding-right: 0px;
+}
+
+.unlike-button, .unlike-buttonComment {
+    background-image: url('../images/unlike-icon.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 20px;
+    display: block;
+    float: left;
+    padding-right: 0px;
+}
+
+.countLikeComment {
+    float: left;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+}
+
+.mtCountLike {
+    background-image: url("../images/TnVvzyC1z5j.png");
+    background-position: -208px -282px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    float: left;
+    height: 6px;
+    left: 3px;
+    position: relative;
+    top: 5px;
+    transform: rotate(-95deg);
+    transition: left 0.3s ease-out 0s;
+    width: 10px;
+}

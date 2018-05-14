@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="admin_ask14" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=101.99.3.56;Initial Catalog=admin_ask14;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="sCN" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblAdministrators" Member="tblAdministrators">
+    <Type Name="tblAdministrator">
+      <Column Name="ADMIN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PHONE_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SORT_DISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROLL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVideo" Member="tblVideos">
+    <Type Name="tblVideo">
+      <Column Name="VIDEO_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LINK_YOUTUBE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUMMURY" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SORT_DISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PARENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LINK" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SORT_DISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DISPLAY_MENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Meta_title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCommentForum" Member="tblCommentForums">
+    <Type Name="tblCommentForum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ForumID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountLike" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountLike" Member="tblCountLikes">
+    <Type Name="tblCountLike">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerEmail" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountLikeComment" Member="tblCountLikeComments">
+    <Type Name="tblCountLikeComment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CommentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerEmail" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCustomer" Member="tblCustomers">
+    <Type Name="tblCustomer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PHONENUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GENDER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AVARTA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ONLINE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHOOL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmailTemplate" Member="tblEmailTemplates">
+    <Type Name="tblEmailTemplate">
+      <Column Name="EMAILID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTENT" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEventComment" Member="tblEventComments">
+    <Type Name="tblEventComment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMEREVENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONTENT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SENDER" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SERVICETYPE" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUSTOMER_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CO_SO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblfiscal" Member="tblfiscals">
+    <Type Name="tblfiscal">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CATEGORY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATE_TRANSACTION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFooter" Member="tblFooters">
+    <Type Name="tblFooter">
+      <Column Name="Content" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblForum" Member="tblForums">
+    <Type Name="tblForum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Article_Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Article_Content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFunctions" Member="tblFunctions">
+    <Type Name="tblFunction">
+      <Column Name="FunctionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FunctionName" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="isActivate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isDisplay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Indexes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="VarChar(550)" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblHistorySent" Member="tblHistorySents">
+    <Type Name="tblHistorySent">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SENDER" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="RECIEVER" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_SENT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CONTENT" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDSENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(950)" CanBeNull="true" />
+      <Column Name="IDSENDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblHoiDap" Member="tblHoiDaps">
+    <Type Name="tblHoiDap">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ADMIN_ANSWER" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLienHe" Member="tblLienHes">
+    <Type Name="tblLienHe">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONTENT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADMIN_ANSWER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMailReceiver" Member="tblMailReceivers">
+    <Type Name="tblMailReceiver">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNews" Member="tblNews">
+    <Type Name="tblNew">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CATEGORYID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUMMARY" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CONTENT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SORT_DISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="META_KEYWORD" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="META_DESCRIPTION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IS_HOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_HIGHTLIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SchoolId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblNewsTags" Member="tblNewsTags">
+    <Type Name="tblNewsTag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="News_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAG_ID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPicture" Member="tblPictures">
+    <Type Name="tblPicture">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AVARTA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPhotoView" Member="tblPhotoViews">
+    <Type Name="tblPhotoView">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PICTURE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FILENAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblQuiz" Member="tblQuizs">
+    <Type Name="tblQuiz">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Des" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Question" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRole" Member="tblRoles">
+    <Type Name="tblRole">
+      <Column Name="ROLEID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROLENAME" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleFunction" Member="tblRoleFunctions">
+    <Type Name="tblRoleFunction">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FunctionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblRoleFunction_tblRoleFunction" Member="tblRoleFunction2" ThisKey="RoleID,FunctionID" OtherKey="RoleID,FunctionID" Type="tblRoleFunction" Cardinality="One" />
+      <Association Name="tblRoleFunction_tblRoleFunction" Member="tblRoleFunction1" ThisKey="RoleID,FunctionID" OtherKey="RoleID,FunctionID" Type="tblRoleFunction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSaveQuiz" Member="tblSaveQuizs">
+    <Type Name="tblSaveQuiz">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDQuiz" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSchool" Member="tblSchools">
+    <Type Name="tblSchool">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="School_Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="School_Image" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link_Facebook" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSlideShow" Member="tblSlideShows">
+    <Type Name="tblSlideShow">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LINK" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SORT_DISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSubject" Member="tblSubjects">
+    <Type Name="tblSubject">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUMMURY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTags" Member="tblTags">
+    <Type Name="tblTag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTeacher" Member="tblTeachers">
+    <Type Name="tblTeacher">
+      <Column Name="TEACHER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTestimonial" Member="tblTestimonials">
+    <Type Name="tblTestimonial">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IMAGE" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUMMURY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTown" Member="tblTowns">
+    <Type Name="tblTown">
+      <Column Name="TOWN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TOWNNAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SORTDISPLAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUploadFile" Member="tblUploadFiles">
+    <Type Name="tblUploadFile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FILE_NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

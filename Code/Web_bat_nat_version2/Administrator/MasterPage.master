@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Admin_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/style_full.css" />
+    <link id="color" rel="stylesheet" type="text/css" href="../resources/css/colors/brown.css" />
+    <link href="../Styles/screenshot.css" rel="stylesheet" type="text/css" />
+    <!-- Scripts -->
+    <script src="../resources/scripts/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../resources/scripts/jquery-ui-1.8.custom.min.js" type="text/javascript"></script>
+    <script src="../resources/scripts/jquery.ui.selectmenu.js" type="text/javascript"></script>
+    <script src="../resources/scripts/jquery.flot.min.js" type="text/javascript"></script>
+    <script src="../resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+    <script src="../resources/scripts/smooth.js" type="text/javascript"></script>
+    <script src="../resources/scripts/smooth.menu.js" type="text/javascript"></script>
+    <script src="../resources/scripts/smooth.table.js" type="text/javascript"></script>
+    <script src="../resources/scripts/smooth.form.js" type="text/javascript"></script>
+    <script src="../resources/scripts/smooth.autocomplete.js" type="text/javascript"></script>
+    <script src="../resources/scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="../resources/scripts/jquery.cookie.js" type="text/javascript"></script>    
+    <script src="../Scripts/jquery.MultiFile.js" type="text/javascript"></script>
+    <script src="../Scripts/thickbox.js" type="text/javascript"></script>
+    <link href="../Styles/thickbox.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#form1").validate();
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            // jQuery formatCurrency plugin: http://plugins.jquery.com/project/formatCurrency
+
+            // Format while typing & warn on decimals entered, 2 decimal places
+            $('.numberf').blur(function () {
+                $('.message').html(null);
+                $(this).formatCurrency({ colorize: true, negativeFormat: '-%s%n', roundToDecimalPlace: 0 });
+            })
+			.keyup(function (e) {
+			    var e = window.event || e;
+			    var keyUnicode = e.charCode || e.keyCode;
+			    if (e !== undefined) {
+			        switch (keyUnicode) {
+			            case 16: break; // Shift
+			            case 17: break; // Ctrl
+			            case 18: break; // Alt
+			            case 27: this.value = ''; break; // Esc: clear entry
+			            case 35: break; // End
+			            case 36: break; // Home
+			            case 37: break; // cursor left
+			            case 38: break; // cursor up
+			            case 39: break; // cursor right
+			            case 40: break; // cursor down
+			            case 78: break; // N (Opera 9.63+ maps the "." from the number key section to the "N" key too!) (See: http://unixpapa.com/js/key.html search for ". Del")
+			            case 110: break; // . number block (Opera 9.63+ maps the "." from the number block to the "N" key (78) !!!)
+			            case 190: break; // .
+			            default: (this).formatCurrency({ colorize: true, negativeFormat: '-%s%n', roundToDecimalPlace: -1, eventOnDecimalsEntered: true });
+			        }
+			    }
+			})
+			.bind('decimalsEntered', function (e, cents) {
+			    if (String(cents).length > 2) {
+			        var errorMsg = 'Please do not enter any cents (0.' + cents + ')';
+			        $('.message').html(errorMsg);
+			        log('Event on decimals entered: ' + errorMsg);
+			    }
+			})
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header">
+        <!-- logo -->
+        <div id="logo">
+            <h1>
+                <a href="administrator.aspx" title="Admin">
+                    <img src="Admin_files/" alt="Admin" /></a></h1>
+        </div>
+        <!-- end logo -->
+        <!-- user -->
+        <ul id="user">
+            <li class="first"><a href="">Xin chào <span style="color: Green">
+                <%=Session["username"]%></span></a></li>
+            <li><a href="changepassword.aspx">Đổi mật khẩu</a></li>
+            <li class="last">
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Thoát</asp:LinkButton>
+            </li>
+        </ul>
+        <!-- end user -->
+        <div id="header-inner">
+            <div id="home">
+                <a href="ControlPannel.aspx"></a>
+            </div>
+            <!-- quick -->
+            <ul id="quick">
+                <asp:Literal ID="litMenu" runat="server"></asp:Literal>
+                <%-- <li><a><span class='icon'>
+                    <img src="Admin_files/setting.png"></span><span>Báo cáo Admin</span></a>
+                    <ul style="display: none;">
+                        <li><a href="BaoCaoCallCenterOnline.aspx">Báo cáo ACD</a></li>
+                        <li><a href="MissCall.aspx">Tổng hợp danh sách cuộc gọi vào</a> </li>
+                        <li><a href="MissCall.aspx">Báo cáo dịch vụ theo quý</a> </li>
+                    </ul>
+                </li>--%>
+            </ul>
+            <!-- end quick -->
+            <div class="corner tl">
+            </div>
+            <div class="corner tr">
+            </div>
+        </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="footer-hentocdo" style="height: 150px;">
+        <center>
+            <p>
+                Copyright © 2009-2010 Đức Nghĩa </a>. Mail: onlylove760@gmail.com. Phone: 0973.758.666
+                All Rights Reserved.</p>
+            <p>
+            </p>
+        </center>     
+    </div>
+    </form>
+</body>
+</html>
