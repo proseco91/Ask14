@@ -35,8 +35,8 @@ public class GetDataNewsByCate : IHttpHandler
         if (ID == 61)
         {
             List<dynamic> arr = new List<dynamic>();
-            arr.AddRange((from p in sql.tblNews where p.STATUS==1 && p.CATEGORYID.IndexOf(ID + ";") > -1 || p.CATEGORYID.Replace(";", "").Equals(ID.ToString()) select new {id=p.ID,time=p.CREATED_DATE,type=0}));
-            arr.AddRange((from p in sql.tblQuizs where p.Status == 1 select new { id = p.ID, time = p.CreateDate, type = 1 }));
+            arr.AddRange((from p in sql.tblNews where p.STATUS==1 && (p.CATEGORYID.IndexOf(ID + ";") > -1 || p.CATEGORYID.Replace(";", "").Equals(ID.ToString())) select new {id=p.ID,time=p.CREATED_DATE,type=0}).OrderByDescending(d => d.time).Take(to));
+            arr.AddRange((from p in sql.tblQuizs where p.Status == 1 select new { id = p.ID, time = p.CreateDate, type = 1 }).OrderByDescending(d => d.time).Take(to));
             arr = arr.OrderByDescending(d => d.time).ToList();
             List<accccc> arrRe = new List<accccc>();
             to = to > arr.Count ? arr.Count : to;
