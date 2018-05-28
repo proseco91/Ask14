@@ -26,7 +26,8 @@
                                 Tên</label></div>
                         <div class="input">
                             <asp:TextBox ID="txtTitle" MaxLength="500" CssClass="required medium" Style="width: 500px;"
-                                runat="server"></asp:TextBox>
+                                runat="server" TextMode="MultiLine"></asp:TextBox>
+
                         </div>
                     </div>
                     <div class="field">

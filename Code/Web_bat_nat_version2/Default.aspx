@@ -127,7 +127,7 @@
                     <div class="item-chuyengia-head">
                         <span class="item-chuyengia-img" style="background-image: url('http://ask14.vn/images/testimonial/<%=item["IMAGE"] %>');"></span>
                         <span class="item-chuyengia-content">
-                            <%=item["NAME"] %>
+                            <%=item["NAME"].ToString().Replace("\n","<br/>") %>
                         </span>
                     </div>
                     <div class="item-chuyengia-des">
