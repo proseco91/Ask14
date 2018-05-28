@@ -1,0 +1,75 @@
+﻿@media only screen and (max-width: 840px) {
+    .menu .btn-menu {
+        display: block;
+    }
+
+    .menu .list-menu {
+        display: none;
+        right: 5px;
+        top: 65px;
+        background-color: rgba(255,255,255,0.5);
+        height: auto;
+        z-index: 1;
+        text-align: right;
+        width: 150px;
+    }
+
+        .menu .list-menu.show {
+            display: block;
+        }
+
+        .menu .list-menu a {
+            display: block;
+        }
+
+            .menu .list-menu a .item-menu {
+                line-height: 30px;
+                height: auto;
+                float: right;
+                margin: 0px;
+                width: 100%;
+                background-color: transparent !important;
+                color: #333;
+                float: none;
+            }
+
+    .tuvantructuyen .content-max .content-tuvan {
+        display: none;
+    }
+
+    .quick-alo-phone {
+        position: absolute;
+        top: -165px;
+        left: calc(50% - 160px);
+    }
+
+    .panel-dichvu, .panel-hotro, .panel-tracnghiem, .panel-chuyengia {
+        -webkit-column-count: unset;
+        -moz-column-count: unset;
+        column-count: unset;
+        -webkit-column-gap: unset;
+        -moz-column-gap: unset;
+        column-gap: unset;
+    }
+
+        .panel-dichvu .item-dichvu, .panel-hotro .item-hotro, .panel-tracnghiem .item-tracnghiem, .panel-chuyengia .item-chuyengia {
+            margin-bottom: 20px;
+        }
+            .panel-dichvu .item-dichvu:last-child, .panel-hotro .item-hotro:last-child, .panel-tracnghiem .item-tracnghiem:last-child, .panel-chuyengia .item-chuyengia:last-child {
+                margin-bottom: 0px;
+            }
+}
+
+@media only screen and (max-width: 816px) {
+    #newsLeft{
+        width:100% !important;
+    }
+}
+@media screen and (max-width: 480px){
+    .two_fifth {
+        margin-top:20px;
+    }
+    #readMoreHot{
+        display:none !important;
+    }
+}

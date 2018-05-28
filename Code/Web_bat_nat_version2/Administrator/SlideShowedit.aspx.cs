@@ -63,7 +63,10 @@ public partial class Administrator_SlideShowedit : System.Web.UI.Page
             if (fuImage.HasFile)
             {
                 fileName = Lib.LocDauFileName(Guid.NewGuid() + "-" + fuImage.FileName);
-                Lib.ResizeImage(fuImage.PostedFile.InputStream, 1200, 400).Save(Server.MapPath("~/images/SlideShow/") + fileName);
+                if (type == 0)
+                    Lib.ResizeImage(fuImage.PostedFile.InputStream, 1285, 723).Save(Server.MapPath("~/images/SlideShow/") + fileName);
+                else
+                    Lib.ResizeImage(fuImage.PostedFile.InputStream, 1200, 400).Save(Server.MapPath("~/images/SlideShow/") + fileName);
             }
             else
             {
@@ -83,7 +86,10 @@ public partial class Administrator_SlideShowedit : System.Web.UI.Page
             {
                 fileName = Lib.LocDauFileName(Guid.NewGuid() + "-" + fuImage.FileName);
                 fuImage.SaveAs(Server.MapPath("~/images/SlideShow/" + fileName));
-                Lib.ResizeImage(fuImage.PostedFile.InputStream, 1200, 400).Save(Server.MapPath("~/images/SlideShow/") + fileName);
+                if (type == 0)
+                    Lib.ResizeImage(fuImage.PostedFile.InputStream, 1285, 723).Save(Server.MapPath("~/images/SlideShow/") + fileName);
+                else
+                    Lib.ResizeImage(fuImage.PostedFile.InputStream, 1200, 400).Save(Server.MapPath("~/images/SlideShow/") + fileName);
             }
             int a = objSlide.Insert(name, fileName, link, sortDisplay, DateTime.Now, status, _des, type);
             if (a > 0)

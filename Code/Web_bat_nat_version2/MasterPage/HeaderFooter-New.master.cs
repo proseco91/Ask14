@@ -25,4 +25,9 @@ public partial class MasterPage_HeaderFooter_New : System.Web.UI.MasterPage
     {
         return objCate.GetAllData_WITH_PARENTID_VIEWER();
     }
+    public string dbGetBanner()
+    {
+        
+        return objSlide.GetAllWithStatus().AsEnumerable().Where(d=>Convert.ToInt32(d["TYPE"])==0).Select(d => d["IMAGE"].ToString()).FirstOrDefault();
+    }
 }

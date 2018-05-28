@@ -56,11 +56,17 @@
                     <div class="field">
                         <div class="label">
                             <label class="small-label">
-                                File (1200px x 400px)</label>
+                                File <br />
+                            </label>
                         </div>
                         <div class="input">
                             <asp:FileUpload ID="fuImage" MaxLength="500" CssClass="medium file" Style="width: 500px;"
                                 runat="server"></asp:FileUpload>
+                            <span style="margin-left:50px;display:inline-block;">
+                                <br />
+                            Slide trang chủ (1285px x 723px)<br />
+                                Slide Giới thiệu (1200px x 400px)
+                            </span>
                         </div>
                     </div>
                     <div class="field">

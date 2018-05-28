@@ -9,8 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://ask14.vn/images/icon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="/Styles/home_new.css" rel="stylesheet" />
+    <link href="/Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Styles/responsive.css" rel="stylesheet" />
     <script src="<%=Lib.urlHome() %>/Scripts/jquery-1.10.2.js"></script>
-    
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -23,59 +25,107 @@
         ga('send', 'pageview');
 
     </script>
-    <%--<script src="<%=Lib.urlHome() %>/Scripts/sirenchat-api.js"></script>--%>
-    <%--<script src='http://sirenchat.com/create-lib/2f0f055c-ac20-4ed0-af91-15begaca14a5'
+    <script src="<%=Lib.urlHome() %>/Scripts/sirenchat-api.js"></script>
+    <script src='http://sirenchat.com/create-lib/2f0f055c-ac20-4ed0-af91-15begaca14a5'
         type="text/javascript"></script>
     <script src='http://sirenchat.com/create-script/2f0f055c-ac20-4ed0-af91-15begaca14a5'
-        type="text/javascript"></script>--%>
-
-
-
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tuvantructuyen').click(function () {
+                var sessionEmail = '<%=Session["email"] %>';
+                if (sessionEmail == '') {
+                    if ($('.linktam_panel_login_data_none').size() > 0) {
+                        var objEvent = {
+                            nameevent: 'getheight',
+                            element: '#ifreame_login_new',
+                            width: $('.linktam_panel_login_data').width()
+                        }
+                        $('.linktam_panel_login_data').attr('valclick', 0).children('#ifreame_login_new').css({ 'width': (objEvent.width) + 'px' });
+                        document.getElementById("ifreame_login_new").contentWindow.postMessage(JSONfn.stringify(objEvent), "*");
+                        setTimeout(function () {
+                            $('.linktam_panel_login_data').removeClass('linktam_panel_login_data_none');
+                        }, 50);
+                    }
+                } else {
+                    $('.panelOfflineMessage').removeClass('panelOfflineMessage_Hiddel');
+                }
+            });
+            $('.menu .btn-menu').click(function () {
+                if ($(this).is('.active')) {
+                    $(this).removeClass('active');
+                    $('.menu .list-menu').removeClass('show');
+                    
+                } else {
+                    $(this).addClass('active');
+                    $('.menu .list-menu').addClass('show');
+                }
+            });
+        });
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body style="margin: 0px;">
     <form id="form1" runat="server">
-        <div class="body-max head">
+        <% 
+            string banner = dbGetBanner();
+        %>
+        <div class="body-max head" style="<%=(string.IsNullOrEmpty(banner)?string.Empty:"background-image: url('/images/SlideShow/"+banner+"');")%>">
             <div class="content-max menu">
-                <a href="">
+                <a href="/">
                     <img src="<%=Lib.urlHome() %>/images/image-news/logo.png" />
                 </a>
+                <span class="btn-menu">
+                    <i class="fa fa-bars"></i>
+                </span>
                 <div class="list-menu">
-                    <a href="">
-                        <span class="item-menu active">Trang chủ</span>
+                    <a href="/">
+                        <span class="item-menu active" valid="0">Trang chủ</span>
                     </a>
-                    <a href="">
-                        <span class="item-menu">Dịch vụ</span>
+                    <a href="/kien-thuc/ct61.htm">
+                        <span class="item-menu" valid="61">Dịch vụ</span>
                     </a>
-                    <a href="">
-                        <span class="item-menu">Hỗ trợ</span>
+                    <a href="/tin-tuc--su-kien/ct49.htm">
+                        <span class="item-menu" valid="49">Hỗ trợ</span>
                     </a>
-                    <a href="">
-                        <span class="item-menu">Trắc nghiệm</span>
+                    <a href="/trac-nghiem/ct64.htm">
+                        <span class="item-menu" valid="64">Trắc nghiệm</span>
                     </a>
-                    <a href="">
-                        <span class="item-menu">Hỏi đáp</span>
+                    <a href="/hoi-dap.htm">
+                        <span class="item-menu" valid="hoidap">Hỏi đáp</span>
                     </a>
-                    <a href="">
-                        <span class="item-menu">Giới thiệu</span>
+                    <a href="/gioi-thieu.htm">
+                        <span class="item-menu" valid="gioithieu">Giới thiệu</span>
                     </a>
                 </div>
             </div>
             <div class="body-max tuvantructuyen">
-                <div class="content-max" style="position: relative;">
-                    <img src="<%=Lib.urlHome() %>/images/image-news/btn-tuvantructuyen.png" />
+                <div class="content-max" style="position: relative">
+                    <div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon">
+                        <div class="quick-alo-ph-circle"></div>
+                            <div class="quick-alo-ph-circle-fill"></div>
+                            <div class="quick-alo-ph-img-circle"></div>
+                    </div>
+                    <div class="content-tuvan">
+                        <span style="font-size: 25px;color: #FFF;font-weight: bold;text-transform: uppercase;width: 267px;">
+                            Tư vấn trực tuyến
+                        </span>
+                        <span style="font-size: 13px;color:#242424;padding-left: 35px;">
+                            Tất cả các ngày, trừ CN (Các câu hỏi ngoài giờ sẽ được trả lời offline sau đó)
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
         <asp:ContentPlaceHolder ID="PlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         <div class="body-max doitac">
         </div>
-        <div class="body-max" style="background-color: #2966fd; padding: 50px 0px;">
+        <div class="body-max" style="background-color: #2966fd; padding: 35px 0px;">
             <div class="content-max">
                 <div style="width: calc(50%); float: left; text-align: center;">
-                    <span style="text-align: left; color: #FFF; display: inline-block; font-size: 20.41px;"><b>Người chịu trách nhiệm nội dung trang web:</b> Nguyễn Vân Anh
+                    <span style="text-align: left; color: #FFF; display: inline-block; font-size: 15px; line-height: 20px;"><b>Chịu trách nhiệm nội dung:</b> Nguyễn Vân Anh
                        
                         <br />
                         <b>Chức vụ:</b> Giám đốc
@@ -84,11 +134,11 @@
                         <b>Học vị:</b> Thạc sĩ
                        
                         <br />
-                        <b>Số điện thoại:</b> 0913213807
+                        <b>Mobile:</b> 0913213807
                     </span>
                 </div>
                 <div style="width: calc(50%); float: left; text-align: center;">
-                    <span style="text-align: left; color: #FFF; display: inline-block; font-size: 20.41px;"><b>Email liên hệ:</b> vananhnguyen@csaga.org.vn
+                    <span style="text-align: left; color: #FFF; display: inline-block; font-size: 15px; line-height: 20px;"><b>Email:</b> vananhnguyen@csaga.org.vn
                        
                         <br />
                         <b>Số:</b> 271/GP-TTĐT
@@ -97,14 +147,14 @@
                         <b>Ngày cấp:</b> 21/01/2016
                        
                         <br />
-                        <b>Cơ quan cấp phép:</b> Sở Thông tin và Truyền thông Hà Nội
+                        <b>Cấp phép:</b> Sở Thông tin và Truyền thông Hà Nội
                     </span>
                 </div>
                 <div style="clear: both;"></div>
             </div>
 
         </div>
-        <div class="body-max" style="background-color: #dbdada; padding: 40px 0px; text-align: center; color: #323232;font-size:20px;">
+        <div class="body-max" style="background-color: #dbdada; padding: 20px 0px; text-align: center; color: #323232; font-size: 15px;">
             <div class="content-max">
                 Trung tâm Nghiên cứu và Ứng dụng Khoa học về Giới - Gia đình - Phụ nữ và Vị thành viên (CSAGA)
                 <br />

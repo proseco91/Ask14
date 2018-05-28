@@ -1,7 +1,5 @@
 ﻿#newsLeft {
-    float: left;
-    margin-right: 2.5%;
-    width: 65.5%;
+    width: 80%;
 }
 
 #readMoreHot {
@@ -33,16 +31,15 @@
         padding: 20px;
         position: absolute;
         color: #333333;
-        line-height: 16px;
         width: calc(100% - 40px);
     }
 
         #news-recent .news-recent-info a p.sub-title {
-            font-size: 14px;
+            font-size: 19px;
             text-transform: uppercase;
             font-weight: bold;
-            font-family: Arial;
             padding-bottom: 5px;
+            color:#333;
         }
 
 .entry-header {
@@ -57,6 +54,7 @@
 .entry-header img {
     max-width: 100%;
     height: auto;
+    border: 2px solid #dfdfdf;
 }
 
 .entry-content {
@@ -76,7 +74,7 @@
     .three_fifth p.sub-title {
         color: #333;
         padding-bottom: 5px;
-        font-size: 14px;
+        font-size: 19px;
         text-transform: uppercase;
         font-weight: bold;
     }
@@ -91,11 +89,16 @@
 }
 
 .date i {
-    padding-right: 5px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/image-news/icon-calendar.png);
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
 }
 
 .entry-info {
-    line-height: 18px;
     padding-bottom: 10px;
     text-align: justify;
     word-spacing: 2px;
@@ -103,7 +106,9 @@
 
 .news-post-child {
     padding-top: 20px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 20px;
+    background-color: #FFF;
 }
 
 .entry-right {
@@ -127,8 +132,9 @@
     }
 
 #list_news p {
-    line-height: 18px;
     word-spacing: 2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #maps-p {
@@ -260,7 +266,7 @@
     float: left;
     padding-bottom: 20px;
     padding-top: 20px;
-    border-bottom:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .title-chia-se {
@@ -365,10 +371,6 @@
     bottom: 140px;
 }
 
-#newsLeft {
-    padding-bottom: 20px;
-}
-
 #newsDetails {
     box-shadow: 4px 4px 4px 4px #aaa;
     padding: 20px;
@@ -456,7 +458,7 @@ ul li.related {
     }
 
     #readMoreHot {
-        display: block;
+        display: none !important;
     }
 
     .blue-button {
@@ -518,4 +520,8 @@ ul li.related {
     .blue-button {
         width: 60px;
     }
+}
+
+.entry-meta time {
+    font-size: 14px;
 }

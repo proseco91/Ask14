@@ -199,7 +199,7 @@ $(document).ready(function () {
     $('a').on('click', function () {
         var href = $(this).attr('href');
         if (href.length > 0 && href.indexOf('javascript:') <= -1) {
-            jConfirmLinkTam('Thông báo', '<div style="text-align:left;">Bạn chưa hoàn thành bài làm. Bạn chắc chắn muốn rời bỏ?</div>', "Vẫn ở trang này", "Rời bỏ", 350, function (status) {
+            jConfirmLinkTam('Thông báo', '<div style="text-align:left;">Bạn chắc chắn muốn rời bỏ?</div>', "Vẫn ở trang này", "Rời bỏ", 350, function (status) {
                 if (status) {
                     $.confirmLinkTam._close();
                 } else {

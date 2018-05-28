@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/HeaderFooter.master" AutoEventWireup="true" CodeFile="FAQ.aspx.cs" Inherits="View_FAQ" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/HeaderFooter-New.master" AutoEventWireup="true" CodeFile="FAQ.aspx.cs" Inherits="View_FAQ" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="<%=Lib.urlHome() %>/Scripts/business.js"></script>
@@ -6,7 +6,12 @@
     <script src="<%=Lib.urlHome() %>/Scripts/FAQ.js"></script>
     <script src="<%=Lib.urlHome() %>/Scripts/paging.js"></script>
     <link href="<%=Lib.urlHome() %>/Styles/paging.css" rel="stylesheet" />
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.list-menu .item-menu').removeClass('active');
+            $('.list-menu .item-menu[valid="hoidap"]').addClass('active');
+        });
+    </script>
     <script type="text/javascript">
         setTimeout(function () {
             $('.itemInput textarea[max-length],.itemInput input:text[max-length],.itemInput input:password[max-length]').keyup(function (event) {
@@ -61,52 +66,94 @@
         });
 
     </script>
+    <style type="text/css">
+        .news .tuvantructuyen {
+            position: relative;
+            height: 95px;
+            margin-top: 115px;
+        }
+
+            .news .tuvantructuyen .content-max {
+                display: block;
+            }
+
+        #pagging {
+            float: none;
+            margin: 0px;
+            background-color: #FFF;
+            padding: 20px;
+        }
+
+            #pagging .pagingcontent {
+                float: right;
+            }
+
+        #list_FAQ {
+            background-color: #FFF;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .itemFAQ p,.itemAnswer p{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .itemSP {
+            font-size: 15px;
+        }
+
+        .date {
+            font-size: 13px;
+            display:block;
+            float:none !important;
+        }
+
+        .itemFAQ-contentQ .itemFAQ-desc {
+            float: left;
+            width: 100%;
+            text-align: justify;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .itemFAQ-contentQ{
+            text-align: justify;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder1" runat="Server">
-    <div class="inner" style="height: 100%;">
-        <div id="newsLeft">
-
-            <%--<section id="addQuestion">
-                <div class="box-panel" style="border-radius: 0px 5px 5px 5px; box-shadow: 0px 0px 1px #838383; margin-top: 40px;">
-                    <span class="title-chia-se">Thêm hỏi đáp</span>
-                    <div>
-                        <div class="itemInput itemInputActive">
-                            <div class="itemInput-Title itemInput-Title-textarea">
-                                Nội dung
-                            </div>
-                            <asp:TextBox CssClass="required" ID="txtNoiDung" runat="server" TextMode="MultiLine" max-length="500" placeholder="Ask14 xin chào các em!\nAsk14 là trang web tư vấn miễn phí cho các bạn học sinh, thầy cô, cha mẹ về các vấn đề tại trường học như: Bạo lực và bắt nạt học đường, xâm hại tình dục, mối quan hệ với thầy cô – cha mẹ - bạn bè ở trường, làm thế nào để an toàn khi đến trường, sự phát triển của cơ thể và các câu về Ask14. Vì thời gian tư vấn online chỉ từ 10h30 đến 13h30 tất cả các ngày trong tuần (trừ chủ nhật và ngày nghỉ lễ, tết), nên mục này sẽ là nơi nhận các câu hỏi, thắc mắc, các vấn đề cần tư vấn. Bạn có thể đăng tình huống của mình, các tư vấn và admin sẽ trả lời bạn trong thời gian sớm nhất.\nAsk14.vn chúc các bạn học sinh trải qua tuổi học trò luôn hạnh phúc và mỗi ngày đến trường là một ngày vui."></asp:TextBox>
-                        </div>
-
-                    </div>
+    <div class="body-max news">
+        <div class="content-max">
+            <div id="newsLeft">
+                <section id="list_FAQ" class="list_FAQ">
+                </section>
+                <div id="pagging">
                 </div>
-                <div class="itemInput" style="float: right;">                    
-                    <asp:Button ID="btnLienHe" CssClass="buttonLienHe" Text="Gửi" runat="server" OnClick="btnLienHe_Click" />
-                </div>
-            </section>--%>
-
-            <section id="list_FAQ" class="list_FAQ">
-            </section>
-            <div id="pagging">
             </div>
-
+            <div style="clear: both"></div>
         </div>
-        <div id="newsRight">
-            <section id="advertise">
-                <img src="<%=Lib.urlHome() %>/images/advertise1.jpg" alt="Quảng cáo" />
-            </section>
-            <section id="maps-p">
-                <a href="#">
-                    <img src="<%=Lib.urlHome() %>/images/maps-p.png" alt="Đánh dấu địa điểm bắt nạt" />
-                </a>
-            </section>
+        <div style="clear: both"></div>
+        <div class="body-max tuvantructuyen">
+            <div class="content-max" style="position: relative">
+                <div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon">
+                    <div class="quick-alo-ph-circle"></div>
+                    <div class="quick-alo-ph-circle-fill"></div>
+                    <div class="quick-alo-ph-img-circle"></div>
+                </div>
+                <div class="content-tuvan">
+                    <span style="font-size: 25px; color: #FFF; font-weight: bold; text-transform: uppercase; width: 267px;">Tư vấn trực tuyến
+                    </span>
+                    <span style="font-size: 13px; color: #242424; padding-left: 35px;">Tất cả các ngày, trừ CN (Các câu hỏi ngoài giờ sẽ được trả lời offline sau đó)
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <div style="clear: both"></div>
 
     <script type="text/javascript">
-        var _category = "63";
-        activeitem(_category);
-
         GetDataFAQ.getByFAQ(5, 1);
     </script>
 </asp:Content>

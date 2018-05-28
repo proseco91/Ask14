@@ -32,7 +32,7 @@ public class GetDataNewsByCate : IHttpHandler
             ID = 43;
         }
 
-        if (ID == 61)
+        if (ID == 64)
         {
             List<dynamic> arr = new List<dynamic>();
             arr.AddRange((from p in sql.tblNews where p.STATUS==1 && (p.CATEGORYID.IndexOf(ID + ";") > -1 || p.CATEGORYID.Replace(";", "").Equals(ID.ToString())) select new {id=p.ID,time=p.CREATED_DATE,type=0}).OrderByDescending(d => d.time).Take(to));

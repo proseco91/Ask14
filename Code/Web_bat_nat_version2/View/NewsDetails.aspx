@@ -1,14 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/HeaderFooter.master" AutoEventWireup="true" CodeFile="NewsDetails.aspx.cs" Inherits="View_NewsDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/HeaderFooter-New.master" AutoEventWireup="true" CodeFile="NewsDetails.aspx.cs" Inherits="View_NewsDetails" %>
 
-<%@ Register Src="../UserControl/MenuRight.ascx" TagName="MenuRight" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="<%=Lib.urlHome() %>/Styles/news.css" rel="stylesheet" />
+    <style type="text/css">
+        ul li.related{
+            list-style:none;
+        }
+        .head {
+            margin-bottom: 20px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder1" runat="Server">
-    <div class="inner" style="height: 100%;">
-        <div id="newsLeft">
-            <section id="newsDetails">
+    <div class="body-max news">
+        <div class="content-max">
+            <div id="newsLeft" style="background-color:#FFF;">
+                <section id="newsDetails">
                 <article>
                     <h2 class="newsDetails-title">
                         <asp:Literal ID="ltTitle" runat="server" />
@@ -29,8 +37,8 @@
 
                     <div id="tags">
                         <%
-                            
-                                
+
+
                             TagsController objTags = new TagsController();
                             string[] sp_list = _listTags.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                             for (int i = 0; i < sp_list.Length; i++)
@@ -59,7 +67,7 @@
                                 {
                                     string _ID = NewsRelate.Rows[i]["ID"].ToString();
                                     string _title = NewsRelate.Rows[i]["TITLE"].ToString();
-                                    
+
                         %>
                         <li class="related">
                             <a href="<%=Lib.LocDau(_title)%>-c<%=Request.QueryString["CategoryID"].ToString() %>-n<%=_ID %>.htm"><%=_title %></a>
@@ -71,14 +79,20 @@
                     </ul>
                 </article>
             </section>
+            </div>
         </div>
-        <uc1:MenuRight ID="MenuRight1" runat="server" />
     </div>
     <div style="clear: both"></div>
     <script type="text/javascript">
+        $(document).ready(function () {
+            $('.list-menu .item-menu').removeClass('active');
+            $('.list-menu .item-menu[valid="<%=Request.QueryString["CategoryID"].ToString() %>"]').addClass('active');
+        });
+    </script>
+    <%--<script type="text/javascript">
         var _category = "<%=Request.QueryString["CategoryID"].ToString() %>";
         activeitem(_category);
         //activeitemChild(_category);
-    </script>
+    </script>--%>
 </asp:Content>
 

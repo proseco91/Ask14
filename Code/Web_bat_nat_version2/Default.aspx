@@ -7,11 +7,13 @@
             $(window).resize(function () {
                 $('.head').css('height', ($('.head').outerWidth(false) * 0.5625) + 'px');
             }).resize();
+            $('.list-menu .item-menu').removeClass('active');
+            $('.list-menu .item-menu[valid="0"]').addClass('active');
         });
     </script>
     <style type="text/css">
         .tuvantructuyen {
-            height: 143px;
+            height: 95px;
         }
 
             .tuvantructuyen .content-max {
@@ -21,7 +23,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder1" runat="Server">
     <div class="content-max">
-        <div style="margin-bottom: 100px;">
+        <div style="margin-bottom: 80px;">
             <div panel-title="dichvu">
                 <span>Dịch Vụ</span>
             </div>
@@ -29,11 +31,15 @@
                 <%foreach (var item in GetDichVu())
                     {%>
                 <div class="item-dichvu">
-                    <div class="item-dichvu-img" style="background-image: url('http://ask14.vn/images/news/<%=item.IMAGE %>');">
-                    </div>
-                    <div class="item-dichvu-title" title="<%=item.TITLE %>">
-                        <%=item.TITLE %>
-                    </div>
+                    <a href="/kien-thuc/<%=(item.CATEGORYNAME.ToString() != "quiz" ? Lib.LocDau(item.TITLE.ToString()) + "-c61-n" + item.ID : "../quiz-" + Lib.LocDau(item.TITLE.ToString()) + "-" + item.ID) + ".htm" %>">
+                        <div class="item-dichvu-img" style="background-image: url('http://ask14.vn/images/news/<%=item.IMAGE %>');">
+                        </div>
+                    </a>
+                    <a href="/kien-thuc/<%=(item.CATEGORYNAME.ToString() != "quiz" ? Lib.LocDau(item.TITLE.ToString()) + "-c61-n" + item.ID : "../quiz-" + Lib.LocDau(item.TITLE.ToString()) + "-" + item.ID) + ".htm" %>">
+                        <div class="item-dichvu-title" title="<%=item.TITLE %>">
+                            <%=item.TITLE %>
+                        </div>
+                    </a>
                     <div class="item-dichvu-des">
                         <%=item.SUMMARY %>
                     </div>
@@ -44,7 +50,7 @@
                 <%} %>
             </div>
         </div>
-        <div style="margin-bottom: 100px;">
+        <div style="margin-bottom: 80px;">
             <div panel-title="hotro">
                 <span>Hỗ Trợ Khẩn Cấp</span>
             </div>
@@ -52,11 +58,15 @@
                 <%foreach (var item in GetHoTro())
                     {%>
                 <div class="item-hotro">
-                    <div class="item-hotro-img" style="background-image: url('http://ask14.vn/images/news/<%=item.IMAGE %>');">
-                    </div>
-                    <div class="item-hotro-title" title="<%=item.TITLE %>">
-                        <%=item.TITLE %>
-                    </div>
+                    <a href="/tin-tuc--su-kien/<%=(item.CATEGORYNAME.ToString() != "quiz" ? Lib.LocDau(item.TITLE.ToString()) + "-c61-n" + item.ID : "../quiz-" + Lib.LocDau(item.TITLE.ToString()) + "-" + item.ID) + ".htm" %>">
+                        <div class="item-hotro-img" style="background-image: url('http://ask14.vn/images/news/<%=item.IMAGE %>');">
+                        </div>
+                    </a>
+                    <a href="/tin-tuc--su-kien/<%=(item.CATEGORYNAME.ToString() != "quiz" ? Lib.LocDau(item.TITLE.ToString()) + "-c61-n" + item.ID : "../quiz-" + Lib.LocDau(item.TITLE.ToString()) + "-" + item.ID) + ".htm" %>">
+                        <div class="item-hotro-title" title="<%=item.TITLE %>">
+                            <%=item.TITLE %>
+                        </div>
+                    </a>
                     <div class="item-hotro-des">
                         <%=item.SUMMARY %>
                     </div>
@@ -67,7 +77,7 @@
                 <%} %>
             </div>
         </div>
-        <div style="margin-bottom: 100px;">
+        <div style="margin-bottom: 80px;">
             <div panel-title="tracnghiem">
                 <span>Trắc Nghiệm</span>
             </div>
@@ -86,6 +96,9 @@
                             <span class="item-tracnghiem-first-content">
                                 <%=arraData[0].TITLE %>
                             </span>
+                            <span class="item-tracnghiem-first-des">
+                                <%=arraData[0].SUMMARY %>
+                            </span>
                         </div>
                     </a>
                     <div class="item-tracnghiem-list">
@@ -103,7 +116,7 @@
                 <%} %>
             </div>
         </div>
-        <div style="margin-bottom: 100px;">
+        <div style="margin-bottom: 80px;">
             <div panel-title="chuyengia">
                 <span>Chuyên Gia</span>
             </div>
